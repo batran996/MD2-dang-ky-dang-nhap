@@ -11,8 +11,7 @@ import java.util.List;
 import java.util.concurrent.CopyOnWriteArrayList;
 
 public class RoleServiceIMPL implements IRoleService {
-//    public static String PATH_USER = "C:\\Users\\WINDOWS\\IdeaProjects\\untitled28\\src\\database\\user.txt";
-//    public static List<User> userList = new Config<User>().readFile(PATH_USER);
+
 
     public static List<Role> roleList = new ArrayList<>();
     static {

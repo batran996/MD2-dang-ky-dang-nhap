@@ -6,6 +6,8 @@ import java.util.List;
 import java.util.Scanner;
 
 public class Config<T> {
+    public static String PATH_USER_PRIN = "C:\\Users\\WINDOWS\\IdeaProjects\\untitled28\\src\\database\\user_prin.txt";
+
    public static Scanner scanner() {
         Scanner scanner = new Scanner(System.in);
         return scanner;
@@ -16,6 +18,9 @@ public class Config<T> {
         try {
             FileInputStream fileInputStream = new FileInputStream(pathFile);
             ObjectInputStream objectInputStream = new ObjectInputStream(fileInputStream);
+
+            tList = (List<T>) objectInputStream.readObject();
+
             fileInputStream.close();
             objectInputStream.close();
         } catch (Exception e) {
@@ -28,6 +33,9 @@ public class Config<T> {
         try {
             FileOutputStream fileOutputStream = new FileOutputStream(pathFile);
             ObjectOutputStream objectOutputStream = new ObjectOutputStream(fileOutputStream);
+
+            objectOutputStream.writeObject(tList);
+
             fileOutputStream.close();
             objectOutputStream.close();
 
